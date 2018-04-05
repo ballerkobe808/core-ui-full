@@ -37,6 +37,10 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       {
+        path: 'users',
+        loadChildren: './views/users/users.module#UsersModule'
+      },
+      {
         path: 'editors',
         loadChildren: './views/editors/editors.module#EditorsModule'
       },
@@ -90,6 +94,14 @@ export const routes: Routes = [
         loadChildren: './views/pages/pages.module#PagesModule',
       }
     ]
+  },
+  {
+    path: 'login',
+    component: SimpleLayoutComponent,
+    data: {
+      title: 'Login'
+    }
+    
   }
 ];
 

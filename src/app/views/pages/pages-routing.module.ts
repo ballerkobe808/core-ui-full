@@ -5,6 +5,7 @@ import { P404Component } from './404.component';
 import { P500Component } from './500.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
+import { ForgotPasswordComponent } from './forgot-password.component';
 
 const routes: Routes = [
   {
@@ -31,14 +32,21 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
         data: {
-          title: 'Login Page'
+          title: 'Login'
         }
       },
       {
         path: 'register',
         component: RegisterComponent,
         data: {
-          title: 'Register Page'
+          title: 'New User Registration'
+        }
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+        data: {
+          title: 'Forgot your Password'
         }
       }
     ]

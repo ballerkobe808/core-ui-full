@@ -1,8 +1,8 @@
 {
-  "name": "@genesisui/angular",
-  "version": "1.8.14",
+  "name": "daniel-template",
+  "version": "0.0.1",
   "description": "Bootstrap 4 Admin Template",
-  "author": "Łukasz Holeczek",
+  "author": "Łukasz Holeczek & Daniel Kong",
   "homepage": "https://genesisui.com",
   "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
   "license": "https://genesisui.com/license.html",

@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+// Angular libraries
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+// import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -67,11 +69,20 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
+
+
+
+
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    // FormsModule, 
+    // ReactiveFormsModule,
+
+
+
     ChartsModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),

@@ -10,7 +10,6 @@ import { FormUtility, matchOtherValidator } from "../../utilities/index";
 export class RegisterComponent implements OnInit {
 
   form: FormGroup; // main formgroup for this page
-  password = 'password';
 
   constructor(
     private formBuilder: FormBuilder,

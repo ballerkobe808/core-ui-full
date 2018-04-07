@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
     // if the form isnt valid, then display any trouble fields
     else {
       FormUtility.validateAllFormFields(this.form); 
+      // FormUtility.focusInvalidField();
     }
 
   }

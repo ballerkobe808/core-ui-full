@@ -1,7 +1,9 @@
 // Here you can add other styles
 
+
+// typical input error message below
 .err-block {
   min-height: 2em;
-  color: red;
-  // background-color: blue;
+  color: $red;
+  font-size: 0.9em;
 }

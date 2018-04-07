@@ -1,10 +1,8 @@
-
-
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
-import {FormUtility} from "../../utilities/index";
+import { FormUtility, matchOtherValidator } from "../../utilities/index";
 
 @Component({
   templateUrl: 'register.component.html'
@@ -12,6 +10,7 @@ import {FormUtility} from "../../utilities/index";
 export class RegisterComponent implements OnInit {
 
   form: FormGroup; // main formgroup for this page
+  password = 'password';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,10 +23,10 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required],
-      repeatPassword: [null, Validators.required]
-      
+      repeatPassword: ['', [Validators.required, matchOtherValidator('password')]]
     });
   }
+
 
 
   /**
@@ -40,8 +39,6 @@ export class RegisterComponent implements OnInit {
   }
 
 
-
-
   /**
    * Create an account
    */
@@ -49,15 +46,12 @@ export class RegisterComponent implements OnInit {
     // if password passes, go to the login
     if (this.form.valid) {
       this.router.navigate(['/pages/login']);
-    } 
+    }
     // if the form isnt valid, then display any trouble fields
     else {
-      FormUtility.validateAllFormFields(this.form); 
+      FormUtility.validateAllFormFields(this.form);
     }
-
   }
 
 
-
 }
-

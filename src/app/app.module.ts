@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 // import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 import { AppComponent } from './app.component';
 
 // Import containers
@@ -71,8 +73,6 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 
-
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -84,6 +84,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
     ChartsModule,
+    SweetAlert2Module.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TabsModule.forRoot(),

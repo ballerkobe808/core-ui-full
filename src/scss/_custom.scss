@@ -5,5 +5,51 @@
 .err-block {
   min-height: 2em;
   color: $red;
+  // color: #D60000;
   font-size: 0.9em;
+}
+
+
+// match the colors of the app in paging
+.ng2-pagination .current {
+  background: theme-color("primary") !important;
+}
+
+
+// center table headings
+.table thead th {
+  text-align: center;
+}
+
+
+/*mimic the look of an href*/
+.href {
+  color: theme-color("primary") !important;
+}
+.href:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+.app-header.navbar {
+  background-color: theme-color("primary");
+}
+
+.navbar-nav .nav-link, .navbar-nav .navbar .dropdown-toggle, .navbar .navbar-nav .dropdown-toggle {
+  color: white;
+}
+
+
+// general label on forms
+label {
+  margin-bottom: .1rem;
+  font-size: 0.875rem;
+    font-weight: 400;
+}
+
+
+.highlight-row {
+
 }

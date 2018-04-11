@@ -30,23 +30,31 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Date registered</th>
-                <th>Role</th>
-                <th>Status</th>
+                <th class="d-none d-sm-table-cell">Email</th>
+                <th class="d-none d-sm-table-cell">Role</th>
+                <th class="d-none d-sm-table-cell">Status</th>
+                <th class="d-none d-md-table-cell">Date registered</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let user of userList | paginate: {itemsPerPage: numberToShow, currentPage: p}">
                 <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>2012/01/01</td>
-                <td>{{user.role}}</td>
-                <td>{{user.status}}</td>
-                <td>
+                <td class="d-none d-sm-table-cell">{{user.email}}</td>
+                <td class="d-none d-sm-table-cell">{{user.role}}</td>
+                <td class="text-center d-none d-sm-table-cell">{{user.status}}</td>
+                <td class="text-center d-none d-md-table-cell">2012/01/01</td>
+                <td class="text-center">
+                    <div href="" (click)="editUser(user);" class="href" style="margin-right: 15px; display: inline;">
+                    <i class="fa fa-edit d-none d-sm-inline"></i>&nbsp;Edit</div>
+    
+                  <div (click)="delSwal.show()" class="href" style=" display: inline;">
+                    <i class="fa fa-trash d-none d-sm-inline"></i>&nbsp;Delete</div>
+                    <swal #delSwal title="Delete User?" text="This will Delete the user permanently.Do you want to continue?" type="question" [showCancelButton]="true" [focusCancel]="true" (confirm)="deleteUser(user)"></swal>
                   <!-- <span class="badge badge-success">Active</span> -->
                 </td>
+
+                
               </tr>
             
             </tbody>
@@ -55,29 +63,7 @@
           <div class="pull-right pagination-text">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
-<!--           
-          <nav>
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#">Prev</a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav> -->
+
         </div>
       </div>
     </div>
@@ -87,6 +73,35 @@
 
 
 
+
+
+
+  <!-- modal to add a new member -->
+  <swal #addSwal title="" [showCancelButton]="true" (confirm)="saveUser()"  confirmButtonText="Save">
+    <div *swalPartial class="user-modal">
+      <h2 class="swal2-title" id="swal2-title">Edit User</h2>
+
+      <div class="row">
+        <div class="col-sm-12 mb-2">
+          <label>Name</label>
+          <input type="text" id="name" [(ngModel)]="user.name" class="form-control">
+        </div>
+        <div class="col-sm-12 mb-2">
+            <label>Email</label>
+            <input type="text" id="email" [(ngModel)]="user.email" class="form-control">
+        </div>
+        <div class="col-sm-6 mb-3">
+            <label>Status</label>
+            <input type="text" id="status" [(ngModel)]="user.status" class="form-control">
+        </div>
+        <div class="col-sm-6">
+            <label>Role</label>
+            <input type="text" id="status" [(ngModel)]="user.role" class="form-control">
+        </div>
+      
+      </div>
+    </div>
+  </swal>
 
 
 </div>

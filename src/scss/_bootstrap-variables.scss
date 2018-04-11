@@ -14,13 +14,15 @@ $gray-600:                        #536c79;
 $gray-700:                        #3e515b;
 $gray-800:                        #29363d;
 $gray-900:                        #151b1e;
+$gray-777:                        #5f5f5f;
 $black:                           #000 !default;
 
 $blue:                            #20a8d8;
 $indigo:                          #6610f2 !default;
 $purple:                          #6f42c1 !default;
 $pink:                            #e83e8c !default;
-$red:                             #ff5454;
+// $red:                             #ff5454;
+$red:                             #D60000;
 $orange:                          #fabb3d;
 $yellow:                          #ffc107 !default;
 $green:                           #79c447;
@@ -44,7 +46,7 @@ $colors: (
 );
 
 $theme-colors: (
-  primary:                        $blue,
+  primary:                        $gray-777,
   secondary:                      $gray-300,
   success:                        $green,
   info:                           $cyan,
